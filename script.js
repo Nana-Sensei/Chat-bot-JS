@@ -4,8 +4,8 @@ const chatbox = document.querySelector(".chatbox");
 const chatInput = document.querySelector(".chat-input textarea");
 const sendChatBtn = document.querySelector(".chat-input span");
 
-let userMessage = null; // Variable to store user's message
-const API_KEY = "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"; // Paste your API key here
+let userMessage = null;
+const API_KEY = "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";
 const inputInitHeight = chatInput.scrollHeight;
 
 const createChatLi = (message, className) => {
@@ -45,10 +45,9 @@ const generateResponse = (chatElement) => {
 }
 
 const handleChat = () => {
-    userMessage = chatInput.value.trim(); // Get user entered message and remove extra whitespace
+    userMessage = chatInput.value.trim()
     if(!userMessage) return;
 
-    // Clear the input textarea and set its height to default
     chatInput.value = "";
     chatInput.style.height = `${inputInitHeight}px`;
 
@@ -66,7 +65,7 @@ const handleChat = () => {
 }
 
 chatInput.addEventListener("input", () => {
-    // Adjust the height of the input textarea based on its content
+
     chatInput.style.height = `${inputInitHeight}px`;
     chatInput.style.height = `${chatInput.scrollHeight}px`;
 });
